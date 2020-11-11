@@ -31,6 +31,13 @@ h2 {
     line-height: 1.2;
 }
 
+.book__img {
+    display: block;
+    max-width: 400px;
+    height: auto;
+
+}
+
 /* Container
 ====================================================== */
 
@@ -125,6 +132,11 @@ header .transparent_button {
     background-size: cover;
     background-repeat: no-repeat;
     padding-top: 146px;
+}
+
+.banner_books,
+.banner_book {
+    padding-bottom: 70px;
 }
 
 .banner_book {
@@ -280,7 +292,7 @@ header .transparent_button {
     justify-content: center;
 }
 
-.about_book{
+.about_book {
     margin-bottom: 0;
     padding-bottom: 0;
 }
@@ -530,6 +542,7 @@ header .transparent_button {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+    background-position-y: bottom;
     /* margin-top: 50px; */
 }
 
@@ -552,6 +565,10 @@ header .transparent_button {
     flex-direction: column;
     justify-content: center;
     padding-left: 33px;
+}
+
+.net path {
+    transition: all 0.4s;
 }
 
 .contact__left h3 {
@@ -684,6 +701,7 @@ footer .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 footer ul {
@@ -784,11 +802,11 @@ footer .transparent_button:hover {
         padding-left: 0;
     }
 
-    .about_book{
+    .about_book {
         padding-bottom: 70px;
     }
 
-    .about_book h2{
+    .about_book h2 {
         font-size: 30px;
     }
 
@@ -955,17 +973,17 @@ footer .transparent_button:hover {
 
 
     /* <<<<<< about as >>>>>>*/
-    .about_us{
+    .about_us {
         flex-direction: column-reverse;
         padding-bottom: 20px;
     }
 
-    .about_us .right{
+    .about_us .right {
         padding-left: 0;
         padding-top: 60px;
     }
 
-    .about_us .left{
+    .about_us .left {
         display: flex;
         justify-content: center;
     }
@@ -974,20 +992,20 @@ footer .transparent_button:hover {
         max-width: 500px;
     }
 
-    .about_book{
+    .about_book {
         flex-direction: column;
         padding-bottom: 20px;
     }
 
-    .about_book .right{
+    .about_book .right {
         width: 70%;
-        padding-top:30px;
+        padding-top: 30px;
         padding-right: 0;
         display: flex;
         justify-content: center;
     }
 
-    .about_book .left{
+    .about_book .left {
         padding-right: 80px;
     }
 
@@ -1042,7 +1060,7 @@ footer .transparent_button:hover {
     }
 
     /* <<<<<< Contact >>>>> */
-    .contact{
+    .contact {
         margin-top: 50px;
     }
 
@@ -1135,6 +1153,10 @@ footer .transparent_button:hover {
         font-size: 32px;
     }
 
+    .foot_h1 {
+        font-size: 24px;
+    }
+
     h2 {
         font-size: 26px;
     }
@@ -1155,15 +1177,24 @@ footer .transparent_button:hover {
 
     .banner {
         padding-top: 120px;
+        margin-bottom: 50px;
+    }
+
+    .banner .left h1 {
+        font-size: 24px;
     }
 
     .banner p {
         font-size: 16px;
     }
 
+    .description h2 {
+        margin-bottom: 40px;
+    }
+
 
     /* <<<<<< about as >>>>>>*/
-    .about_us h2{
+    .about_us h2 {
         margin-bottom: 16px;
         font-size: 26px;
     }
@@ -1179,7 +1210,7 @@ footer .transparent_button:hover {
 
     .about_us .left {
         padding-right: 0;
-    }  
+    }
 
     /* <<<<<< testimoials >>>>>>*/
     .testimonials .item {
@@ -1208,28 +1239,40 @@ footer .transparent_button:hover {
 
     /* <<<<<< HowBuy >>>>>> */
     .howBuy__item {
-        width: 80%;
+        width: 100%;
         margin-bottom: 90px;
         align-items: flex-end;
-        margin-right: auto;
-        margin-left: auto;
+    }
+
+    .howBuy__item:last-child{
+        margin-bottom: 0;
     }
 
     /* <<<<<< Footer >>>>>> */
     footer .container {
         flex-wrap: wrap;
-
+        justify-content: center;
     }
 
-    footer .logo {
-        width: 60px;
-        height: 60px;
-    }
-
-    footer .logo img {
+    .footer__contact {
         width: 100%;
+        align-items: center;
+        margin-bottom: 20px;
     }
 
+    footer ul{
+        width: 100%;
+        align-items:center;
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
+
+    footer .logo img{       
+        width: 60px;
+        height: 60px;     
+    }
+
+ 
     /* <<<<<< Category >>>>>> */
     .category ul {
         margin-top: 20px;
