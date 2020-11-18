@@ -14,6 +14,7 @@ sans-serif;
     font-family: 'Montserrat';
 }
 
+
 a {
     display: inline-block;
     transition: all .4s;
@@ -296,6 +297,121 @@ header .transparent_button {
     margin-bottom: 0;
     padding-bottom: 0;
 }
+
+/* Top books
+========================================================= */
+
+.topBooks {
+    background-color: #2F2E2F;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.topBooks h3 {
+    font-size: 38px;
+    line-height: 1.2;
+    display: flex;
+    justify-content: center;
+    color: #FFFFFF;
+    margin-bottom: 70px;
+}
+
+.slide{
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 60px;
+}
+
+.slide img{
+    /* display: block; */
+    /* width: 100%; */
+    margin-bottom: 30px;
+}
+
+.slide_text {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #C4C4C4;
+    margin-bottom: 10px;
+}
+
+.slide_title p{
+    margin-bottom: 20px;
+    margin-top: 0;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.33;
+    color: #FFFFFF;
+    /* text-align: left; */
+}
+
+.slide_price {
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 0.8;
+    color: #FFFFFF;
+}
+
+.topBooks .btn{
+  display: flex;
+  justify-content: center;
+ }
+
+.next {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: -93px;
+    right: 1%;
+    transform: translateY(-50%);
+}
+
+.next:hover{
+    cursor: pointer;
+}
+
+.next::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-bottom: 8px solid #fff;
+    border-right: 8px solid #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.prev {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: -93px;
+    left: 1%;
+    transform: translateY(-50%);
+}
+
+.prev:hover{
+    cursor: pointer;
+}
+
+.prev::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-bottom: 8px solid #fff;
+    border-left: 8px solid #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+
+
+
+
+
 
 /* Testimonials
 ========================================================= */
@@ -686,7 +802,7 @@ header .transparent_button {
 }
 
 .scale:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 /* Footer
@@ -1028,6 +1144,19 @@ footer .transparent_button:hover {
         margin-bottom: 0;
     }
 
+    /* <<<<<< Topbooks >>>>>> */
+
+    .topBooks h4{
+        font-size: 24px;
+    }
+
+    .slide{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+
+
     /* <<<<<< news >>>>>> */
 
     .news .items {
@@ -1212,6 +1341,26 @@ footer .transparent_button:hover {
         padding-right: 0;
     }
 
+     /* <<<<<< Topbooks >>>>>> */
+    
+     .topBooks h4{
+        font-size: 20px;
+    }
+
+    .topBooks p{
+        font-size: 14px;
+    }
+
+    .slide{
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+
+
+
+
+
     /* <<<<<< testimoials >>>>>>*/
     .testimonials .item {
         width: 100%;
@@ -1244,7 +1393,7 @@ footer .transparent_button:hover {
         align-items: flex-end;
     }
 
-    .howBuy__item:last-child{
+    .howBuy__item:last-child {
         margin-bottom: 0;
     }
 
@@ -1260,19 +1409,19 @@ footer .transparent_button:hover {
         margin-bottom: 20px;
     }
 
-    footer ul{
+    footer ul {
         width: 100%;
-        align-items:center;
+        align-items: center;
         margin-bottom: 20px;
         margin-right: 0;
     }
 
-    footer .logo img{       
+    footer .logo img {
         width: 60px;
-        height: 60px;     
+        height: 60px;
     }
 
- 
+
     /* <<<<<< Category >>>>>> */
     .category ul {
         margin-top: 20px;
