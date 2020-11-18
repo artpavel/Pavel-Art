@@ -20,7 +20,7 @@ function Average(arr) {
     return sum / arr.length;
 }
 
-let b = Average([1, 2, 3, 4, 5]);
+let b = Average([5, 6, 5, 6, 5]);
 console.log('Задання 2. Середнє арифметичне >>>>>  ' + b);
 
 // Завдання 3. Різниця між парними і непарними числами масиву
@@ -37,8 +37,9 @@ function Difference(array) {
     return sumPair - sumUnpair;
 }
 
-let c = Difference([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+let c = Difference([2, 3, 2, 6, 5, 6, 7, 8, 9, 10]);
 console.log('Задання 3. Різниця між масивами >>>>>  ' + c);
+34 - 24
 
 // Завдання 4. Порівняння масивів
 function CompareArrays(arr1, arr2) {
