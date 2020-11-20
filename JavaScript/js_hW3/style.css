@@ -1,0 +1,148 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+.container {
+   max-width: 1200px;
+   margin: 30px auto;
+   padding: 20px;
+   display: flex;
+   justify-content: space-between;
+}
+
+.tabs {
+   width: 30%;
+   border: 1px solid #000;
+   border-radius: 10px;
+   padding: 20px;
+
+
+}
+
+.tabs_content {
+   width: 70%;
+   margin-left: 30px;
+}
+
+ul li {
+   list-style: none;
+   padding: 10px;
+   cursor: pointer;
+   font-weight: 600;
+   font-size: 14px;
+   background-color: #fff;
+   position: relative;
+}
+
+
+h2 {
+   padding-left: 10px;
+   margin-bottom: 10px;
+}
+
+h3,
+p {
+   margin-bottom: 20px;
+}
+
+.active {
+   color: blue;
+}
+
+span {
+   display: block;
+   width: 15px;
+   height: 15px;
+   border-top: 2px solid  blue;
+   border-right: 2px solid blue;
+   position: absolute;
+   top: 50%;
+   right: 0;
+   transform: translate(-50%, -50%) rotate(45deg);
+
+}
+
+/* ============================================================================== */
+.container1 {
+   max-width: 1000px;
+   margin: 30px auto;
+   margin-bottom: 200px;
+}
+
+.flex{
+display: flex;
+}
+
+.slider-for{
+min-width: 0;
+max-width: 60%;
+margin-right: 40px;
+}
+
+.slider-nav{
+   min-width: 0;
+   max-width: 40%;   
+}
+
+
+
+
+img {
+   display: block;
+   width: 100%;
+   padding-right: 10px;
+}
+
+.next {
+   width: 40px;
+   height: 40px;
+   border: 1px solid #000;
+   position: absolute;
+   top: 105%;
+   left: 60px;
+   transform: translateY(-50%);
+}
+
+.next:hover{
+   cursor: pointer;
+}
+
+.next::before {
+   content: '';
+   position: absolute;
+   width: 10px;
+   height: 10px;
+   border-bottom: 2px solid green;
+   border-right: 2px solid green;
+   top: 50%;
+   left: 50%;
+   transform: translate(-60%, -50%) rotate(-45deg);
+}
+
+.prev {
+   width: 40px;
+   height: 40px;
+   border: 1px solid #000;
+   position: absolute;
+   top: 105%;
+   left: 10px;
+   transform: translateY(-50%);
+}
+
+.prev:hover{
+   cursor: pointer;
+}
+
+.prev::before {
+   content: '';
+   position: absolute;
+   width: 10px;
+   height: 10px;
+   border-bottom: 2px solid green;
+   border-right: 2px solid green;
+   top: 50%;
+   left: 50%;
+   transform: translate(-40%, -50%) rotate(135deg);
+}
