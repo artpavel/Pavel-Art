@@ -316,13 +316,13 @@ header .transparent_button {
     margin-bottom: 70px;
 }
 
-.slide{
+.slide {
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 60px;
 }
 
-.slide img{
+.slide img {
     /* display: block; */
     /* width: 100%; */
     margin-bottom: 30px;
@@ -335,7 +335,7 @@ header .transparent_button {
     margin-bottom: 10px;
 }
 
-.slide_title p{
+.slide_title p {
     margin-bottom: 20px;
     margin-top: 0;
     font-weight: bold;
@@ -352,10 +352,10 @@ header .transparent_button {
     color: #FFFFFF;
 }
 
-.topBooks .btn{
-  display: flex;
-  justify-content: center;
- }
+.topBooks .btn {
+    display: flex;
+    justify-content: center;
+}
 
 .next {
     width: 40px;
@@ -366,7 +366,7 @@ header .transparent_button {
     transform: translateY(-50%);
 }
 
-.next:hover{
+.next:hover {
     cursor: pointer;
 }
 
@@ -391,7 +391,7 @@ header .transparent_button {
     transform: translateY(-50%);
 }
 
-.prev:hover{
+.prev:hover {
     cursor: pointer;
 }
 
@@ -1146,11 +1146,11 @@ footer .transparent_button:hover {
 
     /* <<<<<< Topbooks >>>>>> */
 
-    .topBooks h4{
+    .topBooks h4 {
         font-size: 24px;
     }
 
-    .slide{
+    .slide {
         padding-left: 30px;
         padding-right: 30px;
     }
@@ -1275,6 +1275,8 @@ footer .transparent_button:hover {
 
 }
 
+
+
 @media screen and (max-width:600px) {
 
     /* <<<<<< header >>>>>>*/
@@ -1341,20 +1343,30 @@ footer .transparent_button:hover {
         padding-right: 0;
     }
 
-     /* <<<<<< Topbooks >>>>>> */
-    
-     .topBooks h4{
+    /* <<<<<< Topbooks >>>>>> */
+
+    .topBooks h4 {
         font-size: 20px;
     }
 
-    .topBooks p{
+    .topBooks p {
         font-size: 14px;
     }
 
-    .slide{
-        padding-left: 100px;
-        padding-right: 100px;
+    .title h3 {
+        font-size: 28px;
     }
+
+    .next {
+        top: -85px;
+        transform: translateY(-50%) scale(0.5);
+    }
+
+    .prev {
+        top: -85px;
+        transform: translateY(-50%) scale(0.5);
+    }
+
 
 
 
@@ -1450,7 +1462,12 @@ footer .transparent_button:hover {
         align-items: center;
     }
 
+}
 
-
+@media screen and (max-width: 500px) {
+    .slide {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
 
 }
