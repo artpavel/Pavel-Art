@@ -101,17 +101,21 @@ $('.get_cart').on('click', function () {
         });
     }
 
-
-
     $('button.remove').on('click', function () {
-        // $(this).parent('.cart').remove();
+        // let products = JSON.parse(localStorage.getItem('products'));        
+        let my_index = $(this).parent('.cart').index();
         let products = JSON.parse(localStorage.getItem('products'));
-        let cart = products.products;
-        var id = cart.id
-       
-            console.log(id);
+        products = products.products;
+        products.splice(my_index, 1);
+        $(this).parent('.cart').remove();
+        localStorage.setItem('products', JSON.stringify(products));
+            console.log(my_index);
         
-
-
+    
+    
     });
+
+    
 });
+
+
