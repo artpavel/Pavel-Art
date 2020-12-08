@@ -91,6 +91,10 @@ h1 {
    margin-bottom: 20px;
 }
 
+h2{
+   margin-bottom: 10px;
+}
+
 p {
    margin-bottom: 10px;
 }
@@ -122,6 +126,25 @@ li:hover {
    border: 1px solid #000;
 }
 
-.count{
-   width: 50px;    
+.active{
+   background-color: yellow;
+}
+
+.id,
+.cart,
+h3{
+   width: 100%;
+   padding: 10px;
+   margin-bottom: 10px;
+}
+
+.remove{
+   margin-top: 10px;
+}
+
+.plus,
+.minus{
+   width: 40px;
+   margin-right: 5px;
+
 }
