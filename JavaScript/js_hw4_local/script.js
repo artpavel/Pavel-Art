@@ -59,7 +59,8 @@ $('.get_cart').on('click', function () {
     $('.total').remove();
     let my_str = localStorage.getItem('products');
     let sum = [];
-    if (my_str === null) {
+    my_str1=JSON.parse(my_str);
+    if (my_str === null || my_str1.products.length==0) {
         alert('Ваша корзина пуста')
     } else {
         let products = JSON.parse(my_str);
@@ -103,16 +104,13 @@ $('.get_cart').on('click', function () {
 
     $('button.remove').on('click', function () {
         // let products = JSON.parse(localStorage.getItem('products'));        
-        let my_index = $(this).parent('.cart').index();
+        let my_index = $(this).parent('.cart').index()-1;
         let products = JSON.parse(localStorage.getItem('products'));
-        products = products.products;
-        products.splice(my_index, 1);
+        let new_products = products.products;
+        new_products.splice(my_index, 1);
         $(this).parent('.cart').remove();
         localStorage.setItem('products', JSON.stringify(products));
             console.log(my_index);
-        
-    
-    
     });
 
     
