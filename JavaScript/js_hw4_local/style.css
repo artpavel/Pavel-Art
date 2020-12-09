@@ -126,6 +126,10 @@ li:hover {
    background-color: yellow;
 }
 
+.cart{
+   width: 100%;
+}
+
 .id,
 .cart,
 h3{
@@ -135,7 +139,8 @@ h3{
 }
 
 .remove,
-.color{
+.color,
+.count{
    margin-bottom: 10px;
 }
 

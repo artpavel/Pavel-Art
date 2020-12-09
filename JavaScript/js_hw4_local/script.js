@@ -1,8 +1,10 @@
 
-// вибір розмріру та кольору
-$('li').on('click', function () {
-    $(this).toggleClass('active');
-});
+// // вибір розмріру та кольору
+// $('li').on('click', function () {
+//     $(this).toggleClass('active');
+// });
+
+
 
 // створення корзини
 $('button').on('click', function () {
@@ -11,8 +13,18 @@ $('button').on('click', function () {
     let name = $(this).parent('.product').find('h1').text();
     let price = $(this).parent('.product').find('.price span').text();
     let nprice = $(this).parent('.product').find('.new-price span').text();
-    let liSize = $(this).parent('.product').find('.size li.active').text();
-    let liColor = $(this).parent('.product').find('.color li.active').text();
+    let size = $(this).parent('.product').find('.size').text();
+    let liSize = $(this).parent('.product').find('.size li');
+    let arrSize = [];
+    for (let i = 0; i < liSize.length; i++) {
+        arrSize.push($(liSize[i]).text());
+    }
+    let color = $(this).parent('.product').find('.color').text();
+    let liColor = $(this).parent('.product').find('.color li');
+    let arrColor = [];
+    for (let i = 0; i < liColor.length; i++) {
+        arrColor.push($(liColor[i]).text());
+    }
     let id = $(this).parent('.product').find('button').attr('data-id');
 
     let my_product = {
@@ -20,8 +32,8 @@ $('button').on('click', function () {
         title: name,
         price: price,
         nprice: nprice,
-        size: liSize,
-        color: liColor,
+        size: arrSize,
+        color: arrColor,
         id: id,
         count: 1,
     }
@@ -70,8 +82,16 @@ $('.get_cart').on('click', function () {
             let id = products[i].id;
             let image = products[i].image;
             let title = products[i].title;
-            let size = products[i].size;
-            let color = products[i].color;
+            let sizes = products[i].size;
+            str1 = "";
+            for (let j = 0; j < sizes.length; j++) {
+                str1 += '<li>' + sizes[j] + '</li>';
+            }
+            let colors = products[i].color;
+            str2 = "";
+            for (let j = 0; j < colors.length; j++) {
+                str2 += '<li>' + colors[j] + '</li>';
+            }
             let count = products[i].count;
             let countNumber = Number(count);
             let price = products[i].nprice;
@@ -82,10 +102,11 @@ $('.get_cart').on('click', function () {
             <div class="cart" data-id="${id}">
             <img src="${image}" alt="">
             <h2>${title}</h2>
-            <p class="size">Розмір\t--->\t ${size}</p>
-            <p class="color">Колір\t--->\t ${color}</p>
-            <p class="count">Кількість  ---> ${count}</p>
-            <button class="plus">+</button>  <button class="minus">-</button><br>          
+            <ul class="size">Розмір<li>${str1}</li></ul>
+            <div><ul class="color">Колір<li>${str2}</li></ul></div>
+            <div class="count">Кількість  ---> ${count}</div>
+            <p class="price">Ціна за одиницю\t  --->\t ${price}</p>
+            <button class="plus">+</button>  <button class="minus">-</button>          
             <button class="remove">Видалити</button>            
             <p class="sum">Вартість товару ---> ${total}  грн</p>       
             </div>`);
@@ -95,16 +116,18 @@ $('.get_cart').on('click', function () {
     }
 
     // добавляння кількості
-    $('button.plus').on('click', function () {        
+    $('body').on('click', 'button.plus', function () {
         let my_index = $(this).parent('.cart').index();
         let products = JSON.parse(localStorage.getItem('products'));
-        let my_products = products.products;        
+        let my_products = products.products;
         let remove = $(this).parent('.cart').find('.count');
-        let color = $(this).parent('.cart').find('.color');
-        let count = my_products[my_index].count++;
+        let price = $(this).parent('.cart').find('.price');
+        let count = my_products[my_index].count;
+        count++;
+        my_products[my_index].count = count;
         remove.remove();
-        color.append(`<p class="count">Кількість  ---> ${count}</p>`) 
-        localStorage.setItem('products', JSON.stringify(products));         
+        price.prepend(`<p class="count">Кількість  ---> ${count}</p>`)
+        localStorage.setItem('products', JSON.stringify(products));
     });
 
     // видалення товару
@@ -119,14 +142,16 @@ $('.get_cart').on('click', function () {
     });
 
     // видалення кількості
-    $('button.minus').on('click', function () {
+    $('body').on('click','button.minus', function () {
         let my_index = $(this).parent('.cart').index();
         let products = JSON.parse(localStorage.getItem('products'));
         let my_products = products.products;
-        let counts = my_products[my_index].count--;
+        let count = my_products[my_index].count;
+        count--;
+        my_products[my_index].count = count;
         let remove = $(this).parent('.cart').find('.count');
-        let color = $(this).parent('.cart').find('.color');
-        if (counts <= 0) {
+        let price = $(this).parent('.cart').find('.price');
+        if (count <= 0) {
             alert("Невірна дія. Краще видалити товар!!!");
             my_products.splice(my_index, 1);
             $(this).parent('.cart').remove();
@@ -134,9 +159,9 @@ $('.get_cart').on('click', function () {
             localStorage.setItem('products', JSON.stringify(products));
         }
         remove.remove();
-        color.append(`<p class="count">Кількість  ---> ${counts}</p>`) 
+        price.prepend(`<p class="count">Кількість  ---> ${count}</p>`)
         localStorage.setItem('products', JSON.stringify(products));
-    });   
+    });
 });
 
 
