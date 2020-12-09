@@ -95,12 +95,16 @@ $('.get_cart').on('click', function () {
     }
 
     // добавляння кількості
-    $('button.plus').on('click', function () {         
+    $('button.plus').on('click', function () {        
         let my_index = $(this).parent('.cart').index();
         let products = JSON.parse(localStorage.getItem('products'));
-        let my_products = products.products;       
-        let counts = my_products[my_index].count++;        
-        localStorage.setItem('products', JSON.stringify(products));        
+        let my_products = products.products;        
+        let remove = $(this).parent('.cart').find('.count');
+        let color = $(this).parent('.cart').find('.color');
+        let count = my_products[my_index].count++;
+        remove.remove();
+        color.append(`<p class="count">Кількість  ---> ${count}</p>`) 
+        localStorage.setItem('products', JSON.stringify(products));         
     });
 
     // видалення товару
@@ -119,17 +123,18 @@ $('.get_cart').on('click', function () {
         let products = JSON.parse(localStorage.getItem('products'));
         let my_products = products.products;
         let counts = my_products[my_index].count--;
-        
+        let remove = $(this).parent('.cart').find('.count');
+        let color = $(this).parent('.cart').find('.color');
         if (counts <= 0) {
             alert("Невірна дія. Краще видалити товар!!!");
             my_products.splice(my_index, 1);
             $(this).parent('.cart').remove();
             localStorage.setItem('products', JSON.stringify(products));
         }
+        remove.remove();
+        color.append(`<p class="count">Кількість  ---> ${counts}</p>`) 
         localStorage.setItem('products', JSON.stringify(products));
-
-    });
-   
+    });   
 });
 
 
