@@ -1,3 +1,5 @@
+
+// вибір розмріру та кольору
 $('li').on('click', function () {
     $(this).toggleClass('active');
 });
@@ -52,15 +54,14 @@ $('button').on('click', function () {
     }
 });
 
-
 // виведення корзини
 $('.get_cart').on('click', function () {
     $('.cart').remove();
     $('.total').remove();
     let my_str = localStorage.getItem('products');
     let sum = [];
-    my_str1=JSON.parse(my_str);
-    if (my_str === null || my_str1.products.length==0) {
+    my_str1 = JSON.parse(my_str);
+    if (my_str === null || my_str1.products.length == 0) {
         alert('Ваша корзина пуста')
     } else {
         let products = JSON.parse(my_str);
@@ -81,39 +82,54 @@ $('.get_cart').on('click', function () {
             <div class="cart" data-id="${id}">
             <img src="${image}" alt="">
             <h2>${title}</h2>
-            <p class="size">Розмір який Ви вибрали ---> ${size}</p>
-            <p class="size">Колір який Ви вибрали ---> ${color}</p>
-            <p class="count">Кількість товару ---> ${count}</p>
-            <button class="plus">+</button>  <button class="minus">-</button><br>
-            <button class="remove">Видалити</button>
+            <p class="size">Розмір\t--->\t ${size}</p>
+            <p class="color">Колір\t--->\t ${color}</p>
+            <p class="count">Кількість  ---> ${count}</p>
+            <button class="plus">+</button>  <button class="minus">-</button><br>          
+            <button class="remove">Видалити</button>            
             <p class="sum">Вартість товару ---> ${total}  грн</p>       
             </div>`);
         }
-
         let allTotal = sum.reduce((acc, val) => acc + val);
         $('.show-cart').append(`<h3 class="total">Всього до оплати ---> ${allTotal}  грн</h3>`)
-
-        // добавляння кількості
-        $('button.plus').on('click', function () {
-            let count = 1;
-            count++;
-            console.log(count);
-
-        });
     }
 
+    // добавляння кількості
+    $('button.plus').on('click', function () {         
+        let my_index = $(this).parent('.cart').index();
+        let products = JSON.parse(localStorage.getItem('products'));
+        let my_products = products.products;       
+        let counts = my_products[my_index].count++;        
+        localStorage.setItem('products', JSON.stringify(products));        
+    });
+
+    // видалення товару
     $('button.remove').on('click', function () {
-        // let products = JSON.parse(localStorage.getItem('products'));        
-        let my_index = $(this).parent('.cart').index()-1;
+        let my_index = $(this).parent('.cart').index();
         let products = JSON.parse(localStorage.getItem('products'));
         let new_products = products.products;
         new_products.splice(my_index, 1);
         $(this).parent('.cart').remove();
         localStorage.setItem('products', JSON.stringify(products));
-            console.log(my_index);
     });
 
-    
+    // видалення кількості
+    $('button.minus').on('click', function () {
+        let my_index = $(this).parent('.cart').index();
+        let products = JSON.parse(localStorage.getItem('products'));
+        let my_products = products.products;
+        let counts = my_products[my_index].count--;
+        
+        if (counts <= 0) {
+            alert("Невірна дія. Краще видалити товар!!!");
+            my_products.splice(my_index, 1);
+            $(this).parent('.cart').remove();
+            localStorage.setItem('products', JSON.stringify(products));
+        }
+        localStorage.setItem('products', JSON.stringify(products));
+
+    });
+   
 });
 
 

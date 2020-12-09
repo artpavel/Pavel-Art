@@ -112,10 +112,6 @@ ul {
 
 }
 
-.color {
-   margin-bottom: 40px;
-}
-
 li {
    padding-left: 10px;
    padding-right: 10px;
@@ -138,13 +134,14 @@ h3{
    margin-bottom: 10px;
 }
 
-.remove{
-   margin-top: 10px;
+.remove,
+.color{
+   margin-bottom: 10px;
 }
 
 .plus,
 .minus{
    width: 40px;
    margin-right: 5px;
-
+   margin-bottom: 5px;
 }
