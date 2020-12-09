@@ -114,6 +114,7 @@ $('.get_cart').on('click', function () {
         let new_products = products.products;
         new_products.splice(my_index, 1);
         $(this).parent('.cart').remove();
+        $('.total').remove();
         localStorage.setItem('products', JSON.stringify(products));
     });
 
@@ -129,6 +130,7 @@ $('.get_cart').on('click', function () {
             alert("Невірна дія. Краще видалити товар!!!");
             my_products.splice(my_index, 1);
             $(this).parent('.cart').remove();
+            $('.total').remove();
             localStorage.setItem('products', JSON.stringify(products));
         }
         remove.remove();
