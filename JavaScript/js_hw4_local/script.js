@@ -99,7 +99,7 @@ $('.get_cart').on('click', function () {
             let total = countNumber * priceNumber;
             sum.push(total);
             $('.show-cart').append(`           
-            <div class="cart" data-id="${id}">
+            <div class="cart">
             <img src="${image}" alt="">
             <h2>${title}</h2>
             <ul class="size">Розмір<li>${str1}</li></ul>
@@ -116,7 +116,7 @@ $('.get_cart').on('click', function () {
     }
 
     // добавляння кількості
-    $('body').on('click', 'button.plus', function () {
+    $( 'button.plus').on('click', function () {
         let my_index = $(this).parent('.cart').index();
         let products = JSON.parse(localStorage.getItem('products'));
         let my_products = products.products;
@@ -142,7 +142,7 @@ $('.get_cart').on('click', function () {
     });
 
     // видалення кількості
-    $('body').on('click','button.minus', function () {
+    $('button.minus').on('click', function () {
         let my_index = $(this).parent('.cart').index();
         let products = JSON.parse(localStorage.getItem('products'));
         let my_products = products.products;
