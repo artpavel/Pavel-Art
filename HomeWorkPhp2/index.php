@@ -17,9 +17,9 @@ include 'class.php'
     <?php
 
     // Створення масиву
-    $myP1 = new Pants('jeans1', 2, 300, 0);
-    $myP2 = new Pants('jeans2', 4, 900, 0);
-    $myP3 = new Pants('jeans3', 6, 200, 0);
+    $myP1 = new Pants('jeans1', 2, 300);
+    $myP2 = new Pants('jeans2', 4, 900);
+    $myP3 = new Pants('jeans3', 6, 200);
 
     $myS1 = new Shirt('style1', 28, 150, 10);
     $myS2 = new Shirt('style2', 32, 100, 30);

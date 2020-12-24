@@ -92,5 +92,9 @@ class Shirt extends Product
 // Клас штани
 class Pants extends Shirt
 {
-    
+    function __construct($title, $size, $costOfMaterial, $discount = 0)
+    {
+        parent::__construct($title, $size, $costOfMaterial, $discount);
+        $this->discount = $discount;
+    }
 }
