@@ -16,6 +16,7 @@ include 'class.php'
 <body>
     <?php
 
+    // Створення масиву
     $myP1 = new Pants('jeans1', 2, 300);
     $myP2 = new Pants('jeans2', 4, 100);
     $myP3 = new Pants('jeans3', 6, 200);
@@ -31,6 +32,8 @@ include 'class.php'
         echo '<br>';
     }
 
+
+    // Добавляння ціни
     echo '<br>';
     echo '<h2>Новий масив</h2>';
     echo '<br>';
@@ -42,6 +45,20 @@ include 'class.php'
             $item->setCostOfMaterial($item->getCostOfMaterial() + 50);
         }
     }
+
+    foreach ($myArr as $item) {
+        $item->display() . '<br>';
+        echo '<br>';
+    }
+
+    // Сортування масиву
+    echo '<br>';
+    echo '<h2>Новий масив</h2>';
+    echo '<br>';
+
+    usort($myArr, function ($a, $b) {
+        return ($a->calculateOfPrice() - $b->calculateOfPrice());
+    });
 
     foreach ($myArr as $item) {
         $item->display() . '<br>';
