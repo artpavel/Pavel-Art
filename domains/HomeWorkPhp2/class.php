@@ -19,7 +19,7 @@ class Shirt extends Product
     private $title;
     private $size;
     private $costOfMaterial;
-    private $discount;
+    protected $discount;
 
     // Гетери і сетери
     function getTitle()

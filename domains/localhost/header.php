@@ -13,16 +13,16 @@
     <!-- Header -->
     <header>
         <div class="container">
-            <a href="#top" class="logo">
+            <a href="#" class="logo">
                 <img src="images/image%2013.jpg" alt="">
             </a>
             <ul>
-                <li><a href="index.php">Главная</a></li>
-                <li><a href="#aboutUs">Обо мне</a></li>
-                <li><a href="#topBooks">Книги</a></li>
-                <li><a href="#new">Новости</a></li>
-                <li><a href="#testi">Отзывы</a></li>
-                <li><a href="#footer">Контакты</a></li>
+                <li><a href="#" class="index">Главная</a></li>
+                <li><a href="#" class="aboutUs">Обо мне</a></li>
+                <li><a href="#" class="books">Книги</a></li>
+                <li><a href="#" class="new">Новости</a></li>
+                <li><a href="#" class="testi">Отзывы</a></li>
+                <li><a href="#" class="foot">Контакты</a></li>
             </ul>
             <a href="#" class="transparent_button">
                 Войти

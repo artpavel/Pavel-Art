@@ -29,8 +29,9 @@ include 'class.php'
 
     echo '<h2>Створили масив</h2>';
     foreach ($myArr as $item) {
-        $item->display() . '<br>';
-        echo '<br>';
+        echo '<pre>';
+        $item->display();
+        echo '</pre>';
     }
 
     // Добавляння ціни
@@ -40,8 +41,9 @@ include 'class.php'
         if (is_a($item, 'Pants')) {
             $item->setCostOfMaterial($item->getCostOfMaterial() + 50);
         }
-        $item->display() . '<br>';
-        echo '<br>';
+        echo '<pre>';
+        $item->display();
+        echo '</pre>';
     }
 
     // Сортування масиву
@@ -52,8 +54,9 @@ include 'class.php'
     });
 
     foreach ($myArr as $item) {
-        $item->display() . '<br>';
-        echo '<br>';
+        echo '<pre>';
+        $item->display();
+        echo '</pre>';
     }
     ?>
 
