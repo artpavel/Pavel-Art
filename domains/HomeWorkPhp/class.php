@@ -7,8 +7,12 @@ abstract class Product
 
     function Display()
     {
+        echo '<pre>';
         print 'Title product: ' . $this->getNameOfProduct() . '<br>';
+        echo '</pre>';
+        echo '<pre>';
         print 'Price product: ' . $this->calculateOfPrice();
+        echo '</pre>';
     }
 }
 
