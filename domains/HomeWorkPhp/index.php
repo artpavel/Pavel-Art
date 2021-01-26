@@ -8,13 +8,13 @@ include 'class.php'
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
 </head>
 
 <body>
-    <?php
+	<?php
 
     // Створення масиву
     $myP1 = new Pants('jeans1', 2, 300);
@@ -50,7 +50,7 @@ include 'class.php'
     });
 
     foreach ($myArr as $item) {
-        $item->display();
+             $item->display();
     }
     ?>
 

@@ -32,14 +32,14 @@ $('.slider').slick({
     ]
 });
 
-function Myscroll(a) {
-    let element = $(document).find(a);
-    $('html,body').animate({
-        scrollTop: element.offset().top
-    }, 2000);
- }
- $('ul a').on('click', function (e) {
-    e.preventDefault();
-    let link = $(this).attr('href');
-    Myscroll(link);
- });
+//function Myscroll(a) {
+//    let element = $(document).find(a);
+//    $('html,body').animate({
+//        scrollTop: element.offset().top
+//    }, 2000);
+// }
+// $('ul a').on('click', function (e) {
+//    e.preventDefault();
+//    let link = $(this).attr('href');
+//    Myscroll(link);
+// });

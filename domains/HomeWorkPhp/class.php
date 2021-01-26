@@ -81,9 +81,9 @@ class Shirt extends Product
 {
     // Поля класу
     private $title;
-    private $size;
+        private $size;
     private $costOfMaterial;
-    private $discount;
+     private $discount;
 
 
 

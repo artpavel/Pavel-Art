@@ -36,7 +36,7 @@ include 'class.php'
     echo '<h2>Новий масив, після добавлення вартості матеріалу</h2>';
 
     foreach ($myArr as $item) {
-        if (is_a($item, 'Pants')) {
+        if ($item instanceof \Pants) {
             $item->setCostOfMaterial($item->getCostOfMaterial() + 50);
         }
         $item->display();
@@ -45,9 +45,7 @@ include 'class.php'
     // Сортування масиву
     echo '<h2>Новий масив, після сортування</h2>';
 
-    usort($myArr, function ($a, $b) {
-        return ($a->calculateOfPrice() - $b->calculateOfPrice());
-    });
+    usort($myArr, fn($a, $b) => ($a->calculateOfPrice() - $b->calculateOfPrice()));
 
     foreach ($myArr as $item) {
         $item->display();
